@@ -24,8 +24,8 @@ resource "aws_elasticache_cluster" "cache" {
 resource "aws_elasticache_subnet_group" "cache" {
     count = var.create ? length(var.cache_subnet_group) : 0
 
-    name       = lookup(var.db_subnet_group[count.index], "name", null)
-    subnet_ids = lookup(var.db_subnet_group[count.index], "subnet_ids", null)
+    name       = lookup(var.cache_subnet_group[count.index], "name", null)
+    subnet_ids = lookup(var.cache_subnet_group[count.index], "subnet_ids", null)
 
     tags = merge(
         {
