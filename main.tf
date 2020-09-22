@@ -27,12 +27,6 @@ resource "aws_elasticache_subnet_group" "cache" {
     name       = lookup(var.cache_subnet_group[count.index], "name", null)
     subnet_ids = lookup(var.cache_subnet_group[count.index], "subnet_ids", null)
 
-    tags = merge(
-        {
-            "Name" = "${format("%s", var.name)}-Subnet-Group"
-        },
-        var.default_tags,
-    )
 }
 #resource "aws_elasticache_security_group" "main" {
 #    count = var.create ? 1 : 0
