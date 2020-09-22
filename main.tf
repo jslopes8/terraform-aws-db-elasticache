@@ -29,7 +29,7 @@ resource "aws_elasticache_subnet_group" "cache" {
 
     tags = merge(
         {
-            "Name" = "${format("%s", var.cluster_name)}-Subnet-Group"
+            "Name" = "${format("%s", var.name)}-Subnet-Group"
         },
         var.default_tags,
     )

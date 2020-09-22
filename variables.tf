@@ -19,6 +19,7 @@ variable "parameter_group_name" {
 }
 variable "maintenance_window" {
     type    = string
+    default = ""
 }
 variable "port" {
     type    = number
