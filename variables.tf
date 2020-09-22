@@ -3,10 +3,7 @@ variable "create" {
     default = true
 }
 variable "name" {
-    type    = string
-}
-variable "cluster_id" {
-    type    = string
+    type = string
 }
 variable "engine" {
     type    = string
@@ -30,14 +27,22 @@ variable "num_cache_nodes" {
     type    = number
 }
 variable "security_group_ids" {
-    type    = list(string)
+    type    = list
     default = []
 }
-variable "subnet_ids" {
-    type    = list(string)
+variable "az_mode" {
+    type = string
+    default = ""
+}
+variable "cache_subnet_group" {
+    type = any
     default = []
 }
 variable "default_tags" {
     type    = map(string)
     default = {}
 } 
+variable "security_group_names" {
+    type = list
+    default = []
+}
