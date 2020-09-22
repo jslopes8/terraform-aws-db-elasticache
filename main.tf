@@ -1,4 +1,4 @@
-resource "aws_elasticache_cluster" "cache" {
+resource "aws_elasticache_cluster" "main" {
     count   = var.create ? 1 : 0
 
     cluster_id              = lower(replace(var.name, " ", "-"))
